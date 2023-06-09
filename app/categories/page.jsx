@@ -1,6 +1,6 @@
 import React from "react";
 
-const products = () => {
+const categories = () => {
   return (
     <div>
       <section class="py-10">
@@ -423,4 +423,4 @@ const products = () => {
   );
 };
 
-export default products;
+export default categories;

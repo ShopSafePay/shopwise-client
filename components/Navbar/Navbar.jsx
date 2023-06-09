@@ -44,13 +44,13 @@ function Navbar() {
               <a href="/products">Products</a>
             </li>
             <li class="md:mr-12">
-              <a href="#">Categories</a>
+              <a href="/categories">Categories</a>
             </li>
             <li class="md:mr-12">
-              <a href="#">Search</a>
+              <a href="/search">Search</a>
             </li>
             <li class="md:mr-12">
-              <a href="#">Cart</a>
+              <a href="/cart">Cart</a>
             </li>
             <li class="md:mr-12">
               <button class="rounded-full border-2 border-green-500 px-6 py-1 text-green-600 transition-colors hover:bg-green-500 hover:text-white">

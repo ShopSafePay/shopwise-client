@@ -180,7 +180,7 @@ const productDetails = () => {
                 </p>
               </div>
 
-              <h2 class="mt-8 text-base text-gray-900">Coffee Type</h2>
+              <h2 class="mt-8 text-base text-gray-900">Color Option</h2>
               <div class="mt-3 flex select-none flex-wrap items-center gap-1">
                 <label class="">
                   <input
@@ -191,7 +191,7 @@ const productDetails = () => {
                     checked
                   />
                   <p class="peer-checked:bg-black peer-checked:text-white rounded-lg border border-black px-6 py-2 font-bold">
-                    Powder
+                    Matte Black
                   </p>
                 </label>
                 <label class="">
@@ -202,7 +202,7 @@ const productDetails = () => {
                     class="peer sr-only"
                   />
                   <p class="peer-checked:bg-black peer-checked:text-white rounded-lg border border-black px-6 py-2 font-bold">
-                    Whole Bean
+                    Space Gray
                   </p>
                 </label>
                 <label class="">
@@ -213,51 +213,12 @@ const productDetails = () => {
                     class="peer sr-only"
                   />
                   <p class="peer-checked:bg-black peer-checked:text-white rounded-lg border border-black px-6 py-2 font-bold">
-                    Groud
+                    Rose Gold
                   </p>
                 </label>
               </div>
 
-              <h2 class="mt-8 text-base text-gray-900">Choose subscription</h2>
-              <div class="mt-3 flex select-none flex-wrap items-center gap-1">
-                <label class="">
-                  <input
-                    type="radio"
-                    name="subscription"
-                    value="4 Months"
-                    class="peer sr-only"
-                  />
-                  <p class="peer-checked:bg-black peer-checked:text-white rounded-lg border border-black px-6 py-2 font-bold">
-                    4 Months
-                  </p>
-                  <span class="mt-1 block text-center text-xs">$80/mo</span>
-                </label>
-                <label class="">
-                  <input
-                    type="radio"
-                    name="subscription"
-                    value="8 Months"
-                    class="peer sr-only"
-                    checked
-                  />
-                  <p class="peer-checked:bg-black peer-checked:text-white rounded-lg border border-black px-6 py-2 font-bold">
-                    8 Months
-                  </p>
-                  <span class="mt-1 block text-center text-xs">$60/mo</span>
-                </label>
-                <label class="">
-                  <input
-                    type="radio"
-                    name="subscription"
-                    value="12 Months"
-                    class="peer sr-only"
-                  />
-                  <p class="peer-checked:bg-black peer-checked:text-white rounded-lg border border-black px-6 py-2 font-bold">
-                    12 Months
-                  </p>
-                  <span class="mt-1 block text-center text-xs">$40/mo</span>
-                </label>
-              </div>
+  
 
               <div class="mt-10 flex flex-col items-center justify-between space-y-4 border-t border-b py-4 sm:flex-row sm:space-y-0">
                 <div class="flex items-end">
@@ -329,6 +290,8 @@ const productDetails = () => {
                 </li>
               </ul>
             </div>
+
+
 
             <div class="lg:col-span-3">
               <div class="border-b border-gray-300">
