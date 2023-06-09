@@ -2,18 +2,18 @@ import React from "react";
 
 const products = () => {
   return (
-    <div>
-      <section class="py-10">
+    <div class="bg-gray-100 ">
+      <section class="py-10 ">
         <h2 class="mb-12 text-center font-sans text-2xl font-bold text-gray-900">
           Currently Trending 🔥
         </h2>
         <div class="mx-auto grid max-w-screen-xl grid-cols-1 gap-6 p-6 md:grid-cols-2 lg:grid-cols-3">
-          <article class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl">
+          <article class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl ">
             <a href="/products/productId=1?">
               <div class="relative flex items-end overflow-hidden rounded-xl">
                 <img
                   src="/assets/products/iphone/iphone1.jpeg"
-                  alt="Hotel Photo"
+                  class="transition duration-500 hover:scale-125"
                 />
                 <div class="absolute bottom-3 left-3 inline-flex items-center rounded-lg bg-white p-2 shadow-md">
                   <svg
@@ -55,7 +55,11 @@ const products = () => {
           <article class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl">
             <a href="/products/productId=2?">
               <div class="relative flex items-end overflow-hidden rounded-xl">
-                <img src="/assets/products/beats/b1.webp " alt="Hotel Photo" />
+                <img
+                  src="/assets/products/beats/b1.webp "
+                  alt="Hotel Photo"
+                  class="transition duration-500 hover:scale-125"
+                />
                 <div class="absolute bottom-3 left-3 inline-flex items-center rounded-lg bg-white p-2 shadow-md">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -100,7 +104,7 @@ const products = () => {
               <div class="relative flex items-end overflow-hidden rounded-xl">
                 <img
                   src="/assets/products/vivobook/vivo1.webp"
-                  alt="Hotel Photo"
+                  class="transition duration-500 hover:scale-125"
                 />
                 <div class="absolute bottom-3 left-3 inline-flex items-center rounded-lg bg-white p-2 shadow-md">
                   <svg
@@ -119,12 +123,11 @@ const products = () => {
                 <h2 class="text-slate-700">
                   ASUS Vivobook 17.3" Full HD PC Laptop
                 </h2>
-                <p class="text-slate-400 mt-1 text-sm">Lisbon, Portugal</p>
+                <p class="text-slate-400 mt-1 text-sm">Asus</p>
 
                 <div class="mt-3 flex items-end justify-between">
                   <p>
                     <span class="text-lg font-bold text-blue-500">$400</span>
-                    <span class="text-slate-400 text-sm">/night</span>
                   </p>
 
                   <div class="group inline-flex rounded-xl bg-blue-100 p-2 hover:bg-blue-200">
@@ -154,7 +157,7 @@ const products = () => {
               <div class="relative flex items-end overflow-hidden rounded-xl">
                 <img
                   src="/assets/products/oneplus/oneplus1.webp"
-                  alt="Hotel Photo"
+                  class="transition duration-500 hover:scale-125"
                 />
                 <div class="absolute bottom-3 left-3 inline-flex items-center rounded-lg bg-white p-2 shadow-md">
                   <svg
@@ -197,8 +200,8 @@ const products = () => {
             <a href="/products/productId=5?">
               <div class="relative flex items-end overflow-hidden rounded-xl">
                 <img
-                  src="/assets/products/beats-buds/b1.webp "
-                  alt="Hotel Photo"
+                  src="/assets/products/beats-buds/b1.webp"
+                  class="transition duration-500 hover:scale-125"
                 />
                 <div class="absolute bottom-3 left-3 inline-flex items-center rounded-lg bg-white p-2 shadow-md">
                   <svg
@@ -242,7 +245,7 @@ const products = () => {
               <div class="relative flex items-end overflow-hidden rounded-xl">
                 <img
                   src="/assets/products/macbook/mac1.webp"
-                  alt="Hotel Photo"
+                  class="transition duration-500 hover:scale-125"
                 />
                 <div class="absolute bottom-3 left-3 inline-flex items-center rounded-lg bg-white p-2 shadow-md">
                   <svg
@@ -295,7 +298,7 @@ const products = () => {
               <div class="relative flex items-end overflow-hidden rounded-xl">
                 <img
                   src="/assets/products/pixel/pixel1.webp"
-                  alt="Hotel Photo"
+                  class="transition duration-500 hover:scale-125"
                 />
                 <div class="absolute bottom-3 left-3 inline-flex items-center rounded-lg bg-white p-2 shadow-md">
                   <svg
@@ -337,7 +340,11 @@ const products = () => {
           <article class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl">
             <a href="/products/productId=8?">
               <div class="relative flex items-end overflow-hidden rounded-xl">
-                <img src="/assets/products/razer/r1.webp " alt="Hotel Photo" />
+                <img
+                  src="/assets/products/razer/r1.webp"
+                  class="transition duration-500 hover:scale-125"
+                  alt="Hotel Photo"
+                />
                 <div class="absolute bottom-3 left-3 inline-flex items-center rounded-lg bg-white p-2 shadow-md">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -380,7 +387,11 @@ const products = () => {
           <article class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl">
             <a href="/products/productId=9?">
               <div class="relative flex items-end overflow-hidden rounded-xl">
-                <img src="/assets/products/tuf/tuf2.webp" alt="Hotel Photo" />
+                <img
+                  src="/assets/products/tuf/tuf1.webp"
+                  alt="Hotel Photo"
+                  class="transition duration-500 hover:scale-125 ease-in-out"
+                />
                 <div class="absolute bottom-3 left-3 inline-flex items-center rounded-lg bg-white p-2 shadow-md">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -395,7 +406,7 @@ const products = () => {
               </div>
 
               <div class="mt-1 p-2">
-                <h2 class="text-slate-700">ASUS TUF Gaming 17.3" 144Hz FHD,</h2>
+                <h2 class="text-slate-700">ASUS TUF Gaming 17.3" 144Hz FHD</h2>
                 <p class="text-slate-400 mt-1 text-sm">Asus</p>
 
                 <div class="mt-3 flex items-end justify-between">

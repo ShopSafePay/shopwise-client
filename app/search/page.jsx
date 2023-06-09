@@ -1,5 +1,5 @@
 import React from "react";
-
+import ProductCard from "@components/ProductCard/ProductCard";
 const search = () => {
   return (
     <div>
@@ -37,6 +37,10 @@ const search = () => {
             Search
           </button>
         </form>
+        <div class="relative mx-auto w-full max-w-2xl items-center justify-center  ">
+          <h1 class="mt-8 mb-6 text-3xl font-bold ">Search Results 🛒</h1>
+        </div>
+        <ProductCard />
       </div>
     </div>
   );
