@@ -8,10 +8,10 @@ function Testimonial() {
           <div class="flex flex-col items-center">
             <div class="text-center">
               <p class="text-lg font-medium text-blue-600">
-                623 People Recommend us at Google Reviews
+                623 People Recommended us at Google Reviews
               </p>
               <h2 class="mt-4 text-3xl font-bold text-blue-900 sm:text-4xl xl:text-5xl">
-                Have a look at what our clients say
+                Have a look at what our customers say
               </h2>
             </div>
 
@@ -75,9 +75,10 @@ function Testimonial() {
 
                       <blockquote class="mt-8 flex-1">
                         <p class="font-[400] text-xl italic text-blue-900">
-                          “Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Animi ducimus repellat aperiam quam consequatur
-                          eligendi totam vitae iusto mollitia esse.”
+                          “Shopwise's delivery is on point! The products arrived
+                          on time, and the packaging was secure and intact. The
+                          quality of the items I purchased is outstanding.
+                          Shopwise has become my go-to ecommerce site!”
                         </p>
                       </blockquote>
                     </div>
@@ -93,7 +94,7 @@ function Testimonial() {
                           Akorn Veesle
                         </p>
                         <p class="mt-0.5 text-sm text-gray-500">
-                          CEO Lufthansa Corp
+                          Sylhet, Bangladesh
                         </p>
                       </div>
                     </div>
@@ -147,9 +148,10 @@ function Testimonial() {
 
                       <blockquote class="mt-8 flex-1">
                         <p class="font-[400] text-xl italic text-blue-900">
-                          “Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Animi ducimus repellat aperiam quam consequatur
-                          eligendi totam vitae iusto mollitia esse.”
+                          “Impressed by Shopwise's impeccable delivery system!
+                          My order arrived sooner than expected, and the
+                          packaging was top-notch. The quality of the products
+                          exceeded my expectations. Highly recommended!”
                         </p>
                       </blockquote>
                     </div>
@@ -164,9 +166,7 @@ function Testimonial() {
                         <p class="text-base font-bold text-blue-900">
                           Akorn Veesle
                         </p>
-                        <p class="mt-0.5 text-sm text-gray-500">
-                          CEO Lufthansa Corp
-                        </p>
+                        <p class="mt-0.5 text-sm text-gray-500">Tesas, USA</p>
                       </div>
                     </div>
                   </div>
@@ -219,9 +219,10 @@ function Testimonial() {
 
                       <blockquote class="mt-8 flex-1">
                         <p class="font-[400] text-xl italic text-blue-900">
-                          “Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Animi ducimus repellat aperiam quam consequatur
-                          eligendi totam vitae iusto mollitia esse.”
+                          “Kudos to Shopwise for their swift delivery! I
+                          received my order in just two days, and everything was
+                          well-packaged. The products are of exceptional
+                          quality. I'm a satisfied customer!”
                         </p>
                       </blockquote>
                     </div>
@@ -236,9 +237,7 @@ function Testimonial() {
                         <p class="text-base font-bold text-blue-900">
                           Akorn Veesle
                         </p>
-                        <p class="mt-0.5 text-sm text-gray-500">
-                          CEO Lufthansa Corp
-                        </p>
+                        <p class="mt-0.5 text-sm text-gray-500">London, UK</p>
                       </div>
                     </div>
                   </div>

@@ -5,7 +5,7 @@ function Navbar() {
     <div className="w-full bg-white sticky top-0 z-30 drop-shadow-md">
       <header class="relative flex max-w-screen-xl flex-col overflow-hidden px-4 py-4 text-slate-700 md:mx-auto md:flex-row md:items-center">
         <a
-          href="#"
+          href="/"
           class="flex cursor-pointer items-center whitespace-nowrap text-2xl font-black"
         >
           <img
@@ -41,7 +41,7 @@ function Navbar() {
         >
           <ul class="flex flex-col items-center space-y-2 md:ml-auto md:flex-row md:space-y-0">
             <li class="md:mr-12">
-              <a href="#">Products</a>
+              <a href="/products">Products</a>
             </li>
             <li class="md:mr-12">
               <a href="#">Categories</a>

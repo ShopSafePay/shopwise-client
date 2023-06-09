@@ -12,11 +12,10 @@ function Footer() {
                 src="/images/logo-circle.png"
                 alt=""
               />
-              <span class="text-lg font-medium">Boleno</span>
+              <span class="text-lg font-medium">Shopwise</span>
             </div>
             <div class="text-gray-500">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis ad
-              a officia ea expedita!
+              Shopwise is a registered LLC company.
             </div>
           </div>
           <div class="">
@@ -25,12 +24,12 @@ function Footer() {
               <ul class="space-y-3">
                 <li>
                   <a class="hover:text-blue-600 hover:underline" href="#">
-                    How to make a footer
+                    How to make an order
                   </a>
                 </li>
                 <li>
                   <a class="hover:text-blue-600 hover:underline" href="#">
-                    Designing your app
+                    How to edit cart
                   </a>
                 </li>
                 <li>
@@ -101,15 +100,17 @@ function Footer() {
         </div>
         <div class="border-t">
           <div class="mx-auto flex max-w-screen-xl flex-col gap-y-4 px-4 py-3 text-center text-gray-500 sm:px-20 lg:flex-row lg:justify-between lg:text-left xl:px-10">
-            <p class="">© 2022 Boleno | All Rights Reserved</p>
-            <p class="-order-1 sm:order-none">Made with ❤️ Remotely</p>
+            <p class="">
+              © 2022 Boleno<> </> | <> </>All Rights Reserved
+            </p>
+            <p class="-order-1 sm:order-none">Made with ❤️ Mahin and Jibon</p>
             <p class="">
               <a class="" href="#">
-                Privacy Policy
+                Privacy Policy<> </>
               </a>
               <span>|</span>
               <a class="" href="#">
-                Terms of Service
+                <> </>Terms of Service
               </a>
             </p>
           </div>

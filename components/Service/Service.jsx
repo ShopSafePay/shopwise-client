@@ -7,11 +7,9 @@ function Service() {
         <div class="mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-lg">
           <div class="text-center">
             <h2 class="text-3xl font-bold text-slate-800 sm:text-4xl xl:text-5xl">
-              We design digital experiences
+              We design digital shopping experiences 🥳
             </h2>
-            <p class="mt-4 text-base text-gray-700 sm:mt-8">
-              Lorem ipsum dolor sit amet, consectetur adipis elit
-            </p>
+            <p class="mt-4 text-xl text-gray-700 sm:mt-8">How do we do it?</p>
           </div>
 
           <div class="sm:col-gap-12 row-gap-12 md:ga mt-10 grid grid-cols-1 sm:mt-16 sm:grid-cols-2 md:grid-cols-3 xl:mt-24">
@@ -56,8 +54,8 @@ function Service() {
               </svg>
               <h3 class="mt-12 text-xl font-bold text-slate-800">Support</h3>
               <p class="mt-5 text-base text-gray-700">
-                Lorem ipsum dolor sit amet, consectetur adipis elit. Sit enim
-                nec, proin faucibus nibh et sagittis a. Lacinia purus ac amet.
+                Our dedicated team is here to assist you at any time, ensuring a
+                smooth and hassle-free shopping experience.
               </p>
             </div>
 
@@ -118,10 +116,10 @@ function Service() {
                   class=""
                 ></path>
               </svg>
-              <h3 class="mt-12 text-xl font-bold text-slate-800">Sales</h3>
+              <h3 class="mt-12 text-xl font-bold text-slate-800">Trends</h3>
               <p class="mt-5 text-base text-gray-700">
-                Lorem ipsum dolor sit amet, consectetur adipis elit. Sit enim
-                nec, proin faucibus nibh et sagittis a. Lacinia purus ac amet.
+                Stay ahead of the curve with our curated collection of trending
+                products, handpicked just for you.
               </p>
             </div>
 
@@ -174,8 +172,8 @@ function Service() {
               </svg>
               <h3 class="mt-12 text-xl font-bold text-slate-800">Onboarding</h3>
               <p class="mt-5 text-base text-gray-700">
-                Lorem ipsum dolor sit amet, consectetur adipis elit. Sit enim
-                nec, proin faucibus nibh et sagittis a. Lacinia purus ac amet.
+                Our user-friendly interface makes navigating and finding your
+                favorite products an enjoyable shopping journey.
               </p>
             </div>
 
@@ -232,8 +230,8 @@ function Service() {
               </svg>
               <h3 class="mt-12 text-xl font-bold text-slate-800">Product</h3>
               <p class="mt-5 text-base text-gray-700">
-                Lorem ipsum dolor sit amet, consectetur adipis elit. Sit enim
-                nec, proin faucibus nibh et sagittis a. Lacinia purus ac amet.
+                With our extensive inventory and real-time availability updates,
+                you can always find and purchase the products you love.
               </p>
             </div>
 
@@ -268,8 +266,8 @@ function Service() {
               </svg>
               <h3 class="mt-12 text-xl font-bold text-slate-800">Quality</h3>
               <p class="mt-5 text-base text-gray-700">
-                Lorem ipsum dolor sit amet, consectetur adipis elit. Sit enim
-                nec, proin faucibus nibh et sagittis a. Lacinia purus ac amet.
+                We curate and source only the finest products, guaranteeing
+                exceptional quality and craftsmanship.
               </p>
             </div>
 
@@ -302,10 +300,10 @@ function Service() {
                   class=""
                 ></path>
               </svg>
-              <h3 class="mt-12 text-xl font-bold text-slate-800">Result</h3>
+              <h3 class="mt-12 text-xl font-bold text-slate-800">Delivery</h3>
               <p class="mt-5 text-base text-gray-700">
-                Lorem ipsum dolor sit amet, consectetur adipis elit. Sit enim
-                nec, proin faucibus nibh et sagittis a. Lacinia purus ac amet.
+                We prioritize prompt shipping and secure packaging to ensure
+                your orders arrive quickly and in pristine condition.
               </p>
             </div>
           </div>
