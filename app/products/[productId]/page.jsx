@@ -1,6 +1,68 @@
-import React from "react";
+'use client'
 
-const productDetails = () => {
+import { useEffect, useState } from 'react'
+import items from '@utils/productItems'
+
+
+
+
+const productDetails = ({ params }) => {
+  
+  const [name, setName] = useState('')
+  const [brand, setBrand] = useState('')
+  const [price, setPrice] = useState('')
+  const [rating, setRating] = useState('')
+  const [image, setImage] = useState('')
+
+
+
+  const id = params.productId
+
+  useEffect(() => {
+    console.log(id)
+
+    items.map((item) => {
+      if (item.id == id) {
+        console.log(item)
+        setName(item.name)
+        setBrand(item.brand)
+        setPrice(item.price)
+        setRating(item.rating)
+        setImage(item.image)
+
+      }
+    })
+
+
+    
+  }, [])
+
+
+  const handleClick = () => {
+    let cart = localStorage.getItem('cart')
+    if (!cart) {
+      cart = []
+    }
+    else {
+      cart = JSON.parse(cart)
+                
+    }
+    if (cart.includes(id)) {
+      alert('Item already in cart')
+      return
+    }
+    cart.push(id)
+  
+    localStorage.setItem('cart', JSON.stringify(cart))
+  }
+
+ 
+
+  
+
+
+  
+
   return (
     <div>
       <section class="py-12 sm:py-16">
@@ -28,13 +90,13 @@ const productDetails = () => {
                       class="rounded-md p-1 text-sm font-medium text-gray-600 focus:text-gray-900 focus:shadow hover:text-gray-800"
                     >
                       {" "}
-                      Laptops{" "}
+                     {brand}{" "}
                     </a>
                   </div>
                 </div>
               </li>
 
-              {/* <li class="text-left">
+              <li class="text-left">
                 <div class="flex items-center">
                   <span class="mx-2 text-gray-400">/</span>
                   <div class="-m-1">
@@ -44,11 +106,11 @@ const productDetails = () => {
                       aria-current="page"
                     >
                       {" "}
-                      Macbook{" "}
+                      {name}{" "}
                     </a>
                   </div>
                 </div>
-              </li> */}
+              </li>
             </ol>
           </nav>
 
@@ -59,13 +121,13 @@ const productDetails = () => {
                   <div class="max-w-xl overflow-hidden rounded-lg">
                     <img
                       class="h-full w-full max-w-full object-cover"
-                      src="/assets/products/macbook/mac1.webp"
+                      src={image}
                       alt=""
                     />
                   </div>
                 </div>
 
-                {/* <div class="mt-2 w-full lg:order-1 lg:w-32 lg:flex-shrink-0">
+                <div class="mt-2 w-full lg:order-1 lg:w-32 lg:flex-shrink-0">
                   <div class="flex flex-row items-start lg:flex-col">
                     <button
                       type="button"
@@ -108,13 +170,13 @@ const productDetails = () => {
                       />
                     </button>
                   </div>
-                </div> */}
+                </div>
               </div>
             </div>
 
             <div class="lg:col-span-2 lg:row-span-2 lg:row-end-2">
               <h1 class="sm: text-2xl font-bold text-gray-900 sm:text-3xl">
-                Apple MacBook Air with Apple M1 Chip
+                {name}
               </h1>
 
               <div class="mt-5 flex items-center">
@@ -223,12 +285,13 @@ const productDetails = () => {
                   <h1 class="bg-teal-accent-400 rounded-full bg-green-200 px-3 py-px text-2xl font-semibold text-white-900">
                     Price
                   </h1>
-                  <h1 class="text-3xl font-bold px-5">$889.00</h1>
+                  <h1 class="text-3xl font-bold px-5">${price}</h1>
                 </div>
 
                 <button
                   type="button"
                   class="inline-flex items-center justify-center rounded-md border-2 border-transparent bg-gray-900 bg-none px-12 py-3 text-center text-base font-bold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-gray-800"
+                  onClick={handleClick}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

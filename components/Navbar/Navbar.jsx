@@ -21,6 +21,7 @@ function Navbar() {
 
     e.preventDefault()
     localStorage.removeItem('token')
+    localStorage.removeItem('cart')
     router.push('/')
 
   }
