@@ -1,8 +1,11 @@
+import Footer from "@components/Footer/Footer";
+import Navbar from "@components/Navbar/Navbar";
 import React from "react";
 
 const categories = () => {
   return (
     <div>
+      <Navbar />
       <section class="bg-white py-12 text-gray-700 sm:py-16 lg:py-20">
         <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
           <div class="mx-auto max-w-md text-center">
@@ -365,6 +368,7 @@ const categories = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

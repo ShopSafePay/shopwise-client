@@ -34,7 +34,7 @@ const productDetails = () => {
                 </div>
               </li>
 
-              <li class="text-left">
+              {/* <li class="text-left">
                 <div class="flex items-center">
                   <span class="mx-2 text-gray-400">/</span>
                   <div class="-m-1">
@@ -48,7 +48,7 @@ const productDetails = () => {
                     </a>
                   </div>
                 </div>
-              </li>
+              </li> */}
             </ol>
           </nav>
 
@@ -65,7 +65,7 @@ const productDetails = () => {
                   </div>
                 </div>
 
-                <div class="mt-2 w-full lg:order-1 lg:w-32 lg:flex-shrink-0">
+                {/* <div class="mt-2 w-full lg:order-1 lg:w-32 lg:flex-shrink-0">
                   <div class="flex flex-row items-start lg:flex-col">
                     <button
                       type="button"
@@ -108,7 +108,7 @@ const productDetails = () => {
                       />
                     </button>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
 

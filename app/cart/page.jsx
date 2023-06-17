@@ -1,8 +1,11 @@
+import Footer from "@components/Footer/Footer";
+import Navbar from "@components/Navbar/Navbar";
 import React from "react";
 
 const cart = () => {
   return (
     <div>
+      <Navbar />
       <section class="h-screen bg-gray-100 py-12 sm:py-16 lg:py-20">
         <div class="mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex items-center justify-center">
@@ -192,6 +195,7 @@ const cart = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

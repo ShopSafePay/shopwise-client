@@ -1,8 +1,11 @@
 import React from "react";
 import ProductCard from "@components/ProductCard/ProductCard";
+import Navbar from "@components/Navbar/Navbar";
+import Footer from "@components/Footer/Footer";
 const search = () => {
   return (
     <div>
+      <Navbar />
       <div class="mx-auto mt-2 w-screen max-w-screen-md py-10 leading-6">
         <div class="relative mx-auto w-full max-w-2xl items-center justify-center  ">
           <h1 class="mt-8 mb-6 text-3xl font-bold ">Search Products 🔎</h1>
@@ -42,6 +45,7 @@ const search = () => {
         </div>
         <ProductCard />
       </div>
+      <Footer />
     </div>
   );
 };

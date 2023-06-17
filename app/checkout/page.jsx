@@ -1,8 +1,11 @@
+import Footer from "@components/Footer/Footer";
+import Navbar from "@components/Navbar/Navbar";
 import React from "react";
 
 const checkout = () => {
   return (
     <div>
+      <Navbar />
       <div class="flex flex-col items-center border-b bg-white py-4 sm:flex-row sm:px-10 lg:px-20 xl:px-32">
         <a href="#" class="text-2xl font-bold text-gray-800">
           Checkout
@@ -337,6 +340,7 @@ const checkout = () => {
           </button>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

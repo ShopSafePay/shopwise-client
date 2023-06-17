@@ -1,5 +1,4 @@
-import Footer from "@components/Footer/Footer";
-import Navbar from "@components/Navbar/Navbar";
+
 import "@styles/global.css";
 
 export const metadata = {
@@ -16,9 +15,9 @@ const Rootlayout = ({ children }) => {
           <div className="gradient" />
         </div>
         <main className="app">
-          <Navbar />
+         
           {children}
-          <Footer />
+      
         </main>
       </body>
     </html>
