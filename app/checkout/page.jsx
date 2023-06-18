@@ -4,6 +4,7 @@ import Footer from "@components/Footer/Footer";
 import Navbar from "@components/Navbar/Navbar";
 import React, { useState,useEffect } from "react";
 import items from  '@utils/productItems'
+import axios from 'axios'
 
 const checkout = () => {
 
@@ -30,19 +31,36 @@ const checkout = () => {
   }, [data]);
 
 
-  const handlePlaceOrder = (e) => {
+  const handlePlaceOrder = async(e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const cardHolder = e.target.cardHolder.value;
-    const cardNo = e.target.cardNo.value;
-    const creditExpiry = e.target.creditExpiry.value;
-    const creditCvc = e.target.creditCvc.value;
+    const account = e.target.cardNo.value;
+    const key = e.target.secretKey.value;
     const billingAddress = e.target.billingAddress.value;
     const billingState = e.target.billingState.value;
     const billingZip = e.target.billingZip.value;
 
-    console.log(email, cardHolder, cardNo, creditExpiry, creditCvc, billingAddress, billingState, billingZip,Total)
+    console.log(email, cardHolder, account , key , billingAddress, billingState, billingZip,Total)
 
+    if(email && cardHolder && account && key && billingAddress && billingState && billingZip) {
+
+      const res = await axios.post('http://localhost:3001/api/account', {
+        account,
+        key,
+        Total,
+      }, {
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE',
+          'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
+        },
+      });
+      
+
+      res.status === 201 ? alert('Order Placed Successfully') : alert('Order Failed')
+      
+    }
     
   }
 
@@ -262,16 +280,10 @@ const checkout = () => {
                 </div>
               </div>
               <input
-                type="text"
-                name="creditExpiry"
-                class="w-full rounded-md border border-gray-200 px-2 py-3 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
-                placeholder="MM/YY"
-              />
-              <input
-                type="text"
-                name="creditCvc"
-                class="w-1/6 flex-shrink-0 rounded-md border border-gray-200 px-2 py-3 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
-                placeholder="CVC"
+                type="password"
+                name="secretKey"
+                class="ml-2 w-full rounded-md border border-gray-200 px-2 py-3 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
+                placeholder="Enter Secret Key"
               />
             </div>
             <label
@@ -300,14 +312,18 @@ const checkout = () => {
               <select
                 type="text"
                 name="billingState"
-                class="w-full rounded-md border border-gray-200 px-4 py-3 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
+                placeholder="State"
+                class="ml-2 w-full rounded-md border border-gray-200 px-4 py-3 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
               >
                 <option value="State">State</option>
+                <option value="State">Sylhet</option>
+                <option value="State" >Dhaka</option>
+                <option value="State">Rajshahi</option>
               </select>
               <input
                 type="text"
                 name="billingZip"
-                class="flex-shrink-0 rounded-md border border-gray-200 px-4 py-3 text-sm shadow-sm outline-none sm:w-1/6 focus:z-10 focus:border-blue-500 focus:ring-blue-500"
+                class="ml-2 flex-shrink-0 rounded-md border border-gray-200 px-4 py-3 text-sm shadow-sm outline-none sm:w-1/6 focus:z-10 focus:border-blue-500 focus:ring-blue-500"
                 placeholder="ZIP"
               />
             </div>
