@@ -17,8 +17,8 @@ const register = () => {
       },
       body: JSON.stringify({ email, password })
     })
-    const data = await res.json()
-    console.log(data)
+    // const data = await res.json()
+    // console.log(data)
     res.status === 201 &&  router.push('/login')
     e.target.reset()
   }

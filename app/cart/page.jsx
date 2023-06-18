@@ -3,13 +3,22 @@
 import Footer from "@components/Footer/Footer";
 import Navbar from "@components/Navbar/Navbar";
 import React, { useEffect, useState } from "react";
-
+import { useRouter } from "next/navigation";
 import items from "@utils/productItems";
 
 const productCart = () => {
 
+  const router = useRouter();
+
+
   const [cartData, setCartData] = useState([]);
 
+
+  const handleCheckout = async(e) =>{
+    e.preventDefault()
+    localStorage.setItem('checkout', JSON.stringify(cartData))
+    router.push('/checkout')
+  }
 
   useEffect(() => {
     let cart = localStorage.getItem("cart");
@@ -202,9 +211,10 @@ const productCart = () => {
 
                 <div class="mt-6 text-center">
                   <button
+                    onClick={handleCheckout}
                     type="button"
                     class="group inline-flex w-full items-center justify-center rounded-md bg-gray-900 px-6 py-4 text-lg font-semibold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-gray-800"
-                  >
+                  > 
                     Checkout
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

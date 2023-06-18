@@ -16,7 +16,7 @@ const categories = () => {
 
           <div class="mt-10 grid grid-cols-4 md:grid-cols-3 gap-6 sm:grid-cols-1 sm:gap-4 lg:mt-16">
             <article class="relative flex flex-col overflow-hidden rounded-lg border transition duration-300 hover:shadow-lg ease-in-out">
-              <a href="/products/productId=3?">
+              <a href="/products/3">
                 <div class="aspect-square overflow-hidden">
                   <img
                     class="transition duration-300 hover:scale-125 ease-in-out"
@@ -52,7 +52,7 @@ const categories = () => {
               </button>
             </article>
             <article class="relative flex flex-col overflow-hidden rounded-lg border transition duration-300 hover:shadow-lg ease-in-out">
-              <a href="/products/productId=6?">
+              <a href="/products/6">
                 <div class="aspect-square overflow-hidden">
                   <img
                     class="transition duration-300 hover:scale-125 ease-in-out"
@@ -88,7 +88,7 @@ const categories = () => {
               </button>
             </article>
             <article class="relative flex flex-col overflow-hidden rounded-lg border transition duration-300 hover:shadow-lg ease-in-out">
-              <a href="/products/productId=9?">
+              <a href="/products/9">
                 <div class="aspect-square overflow-hidden">
                   <img
                     class="transition duration-300 hover:scale-125 ease-in-out"
@@ -137,7 +137,7 @@ const categories = () => {
 
           <div class="mt-10 grid grid-cols-4 md:grid-cols-3 gap-6 sm:grid-cols-1 sm:gap-4 lg:mt-16">
             <article class="relative flex flex-col overflow-hidden rounded-lg border transition duration-300 hover:shadow-lg ease-in-out">
-              <a href="/products/productId=1?">
+              <a href="/products/1">
                 <div class="aspect-square overflow-hidden">
                   <img
                     class="transition duration-300 hover:scale-125 ease-in-out"
@@ -173,7 +173,7 @@ const categories = () => {
               </button>
             </article>
             <article class="relative flex flex-col overflow-hidden rounded-lg border transition duration-300 hover:shadow-lg ease-in-out">
-              <a href="/products/productId=4?">
+              <a href="/products/4">
                 <div class="aspect-square overflow-hidden">
                   <img
                     class="transition duration-300 hover:scale-125 ease-in-out"
@@ -209,7 +209,7 @@ const categories = () => {
               </button>
             </article>
             <article class="relative flex flex-col overflow-hidden rounded-lg border transition duration-300 hover:shadow-lg ease-in-out">
-              <a href="/products/productId=7?">
+              <a href="/products/7">
                 <div class="aspect-square overflow-hidden">
                   <img
                     class="transition duration-300 scale-90 hover:scale-100 ease-in-out"
@@ -258,7 +258,7 @@ const categories = () => {
 
           <div class="mt-10 grid grid-cols-4 md:grid-cols-3 gap-6 sm:grid-cols-1 sm:gap-4 lg:mt-16">
             <article class="relative flex flex-col overflow-hidden rounded-lg border transition duration-300 hover:shadow-lg ease-in-out">
-              <a href="/products/productId=2?">
+              <a href="/products/2">
                 <div class="aspect-square overflow-hidden">
                   <img
                     class="transition duration-300 hover:scale-125 ease-in-out"
@@ -294,7 +294,7 @@ const categories = () => {
               </button>
             </article>
             <article class="relative flex flex-col overflow-hidden rounded-lg border transition duration-300 hover:shadow-lg ease-in-out">
-              <a href="/products/productId=5?">
+              <a href="/products/5">
                 <div class="aspect-square overflow-hidden">
                   <img
                     class="transition duration-300 hover:scale-125 ease-in-out"
@@ -330,7 +330,7 @@ const categories = () => {
               </button>
             </article>
             <article class="relative flex flex-col overflow-hidden rounded-lg border transition duration-300 hover:shadow-lg ease-in-out">
-              <a href="/products/productId=8?">
+              <a href="/products/8">
                 <div class="aspect-square overflow-hidden">
                   <img
                     class="transition duration-300 hover:scale-125 ease-in-out"

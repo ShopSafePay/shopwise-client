@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from 'react'
 import items from '@utils/productItems'
+import Navbar from '@components/Navbar/Navbar';
+import Footer from '@components/Footer/Footer';
 
 
 
@@ -13,7 +15,10 @@ const productDetails = ({ params }) => {
   const [price, setPrice] = useState('')
   const [rating, setRating] = useState('')
   const [image, setImage] = useState('')
-
+  const [img1,setImg1] = useState('')
+  const [img2,setImg2] = useState('')
+  const [img3,setImg3] = useState('')
+  const [img4,setImg4] = useState('')
 
 
   const id = params.productId
@@ -29,7 +34,10 @@ const productDetails = ({ params }) => {
         setPrice(item.price)
         setRating(item.rating)
         setImage(item.image)
-
+        setImg1(item.img1)
+        setImg2(item.img2)
+        setImg3(item.img3)
+        setImg4(item.img4)
       }
     })
 
@@ -65,6 +73,7 @@ const productDetails = ({ params }) => {
 
   return (
     <div>
+      <Navbar />
       <section class="py-12 sm:py-16">
         <div class="container mx-auto px-4">
           <nav class="flex">
@@ -135,7 +144,7 @@ const productDetails = ({ params }) => {
                     >
                       <img
                         class="h-full w-full object-cover"
-                        src="/assets/products/macbook/mac1.webp"
+                        src={img1}
                         alt=""
                       />
                     </button>
@@ -145,7 +154,7 @@ const productDetails = ({ params }) => {
                     >
                       <img
                         class="h-full w-full object-cover"
-                        src="/assets/products/macbook/mac2.webp"
+                        src={img2}
                         alt=""
                       />
                     </button>
@@ -155,7 +164,7 @@ const productDetails = ({ params }) => {
                     >
                       <img
                         class="h-full w-full object-cover"
-                        src="/assets/products/macbook/mac3.webp"
+                        src={img3}
                         alt=""
                       />
                     </button>
@@ -165,7 +174,7 @@ const productDetails = ({ params }) => {
                     >
                       <img
                         class="h-full w-full object-cover"
-                        src="/assets/products/macbook/mac4.webp"
+                        src={img4}
                         alt=""
                       />
                     </button>
@@ -512,6 +521,7 @@ const productDetails = ({ params }) => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
