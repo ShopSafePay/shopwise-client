@@ -5,13 +5,28 @@ import Navbar from "@components/Navbar/Navbar";
 import React, { useState,useEffect } from "react";
 import items from  '@utils/productItems'
 import axios from 'axios'
+import jwt from 'jsonwebtoken'
 
 const checkout = () => {
 
   const [data, setData] = useState([]);
   const [Total, setTotal] = useState(0);
+  const [buyerId, setBuyerId] = useState('');
+  const [buyerName, setBuyerName] = useState('');
 
   useEffect(() => {
+
+    const token = localStorage.getItem("token");
+
+    if (token === null) {
+      window.location.href = "/login";
+    } else {
+      const decode = jwt.decode(token);
+      setBuyerId(decode.id);
+      setBuyerName(decode.name);
+      console.log(decode.id, decode.name)
+    }
+
     const checkout = localStorage.getItem("checkout");
     if(checkout === null) {
       localStorage.setItem("checkout", JSON.stringify([]));
@@ -19,12 +34,12 @@ const checkout = () => {
     const dat = JSON.parse(checkout)
     setData(dat);
     
-    console.log(dat);
+    // console.log(dat);
   }, []);
 
   useEffect(() => {
     let total = 0;
-    data.map((item) => {
+    data?.map((item) => {
       total += items[item.id-1].price * item.count;
     });
     setTotal(total);
@@ -45,20 +60,29 @@ const checkout = () => {
 
     if(email && cardHolder && account && key && billingAddress && billingState && billingZip) {
 
-      const res = await axios.post('http://localhost:3001/api/account', {
-        account,
-        key,
-        Total,
-      }, {
+      const res = await fetch('/api/checkout', {
+
+        method: 'POST',
         headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE',
-          'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
+          'Content-Type': 'application/json'
         },
-      });
-      
+
+        body: JSON.stringify({
+          account,
+          key,
+          Total,
+          data,
+          buyerId,
+          buyerName,
+        })
+      })
 
       res.status === 201 ? alert('Order Placed Successfully') : alert('Order Failed')
+
+      e.target.reset();
+      localStorage.removeItem('checkout');
+      localStorage.removeItem('cart');
+      window.location.href = '/checkout';
       
     }
     
@@ -134,7 +158,7 @@ const checkout = () => {
 
 
             {
-              data.map((item) => (
+              data?.map((item) => (
 
                 <div class="flex flex-col rounded-lg bg-white sm:flex-row">
                   <img

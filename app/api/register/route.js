@@ -7,7 +7,7 @@ export const POST = async (req) => {
 
     await db()
 
-    const { email, password} = await req.json()
+    const { email, password, name } = await req.json()
 
     const isExisting = await EcomUser.findOne({email})
 
@@ -19,9 +19,12 @@ export const POST = async (req) => {
 
     const newUser = new EcomUser({
         email,
-        password: hashedPassword
+        password: hashedPassword,
+        name
 
     })
+
+    console.log(newUser)
 
     try{
         newUser.save()

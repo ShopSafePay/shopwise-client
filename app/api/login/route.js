@@ -18,9 +18,12 @@ export const POST = async (req) => {
             return new NextResponse("Invalid credentials", { status: 401 });
         }
 
+        console.log(user)
+
         const data = {
             id: user._id,
             email: user.email,
+            name: user.name,
             isLogged: true,
         };
 
