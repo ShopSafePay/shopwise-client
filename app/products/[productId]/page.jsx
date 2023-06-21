@@ -1,75 +1,62 @@
-'use client'
+"use client";
 
-import { useEffect, useState } from 'react'
-import items from '@utils/productItems'
-import Navbar from '@components/Navbar/Navbar';
-import Footer from '@components/Footer/Footer';
-
-
-
+import { useEffect, useState } from "react";
+import items from "@utils/productItems";
+import Navbar from "@components/Navbar/Navbar";
+import Footer from "@components/Footer/Footer";
 
 const productDetails = ({ params }) => {
-  
-  const [name, setName] = useState('')
-  const [brand, setBrand] = useState('')
-  const [price, setPrice] = useState('')
-  const [rating, setRating] = useState('')
-  const [image, setImage] = useState('')
-  const [img1,setImg1] = useState('')
-  const [img2,setImg2] = useState('')
-  const [img3,setImg3] = useState('')
-  const [img4,setImg4] = useState('')
+  const [name, setName] = useState("");
+  const [brand, setBrand] = useState("");
+  const [price, setPrice] = useState("");
+  const [rating, setRating] = useState("");
+  const [image, setImage] = useState("");
+  const [img1, setImg1] = useState("");
+  const [img2, setImg2] = useState("");
+  const [img3, setImg3] = useState("");
+  const [img4, setImg4] = useState("");
 
-
-  const id = params.productId
+  const id = params.productId;
 
   useEffect(() => {
-    console.log(id)
+    console.log(id);
 
     items.map((item) => {
       if (item.id == id) {
-        console.log(item)
-        setName(item.name)
-        setBrand(item.brand)
-        setPrice(item.price)
-        setRating(item.rating)
-        setImage(item.image)
-        setImg1(item.img1)
-        setImg2(item.img2)
-        setImg3(item.img3)
-        setImg4(item.img4)
+        console.log(item);
+        setName(item.name);
+        setBrand(item.brand);
+        setPrice(item.price);
+        setRating(item.rating);
+        setImage(item.image);
+        setImg1(item.img1);
+        setImg2(item.img2);
+        setImg3(item.img3);
+        setImg4(item.img4);
       }
-    })
+    });
+  }, []);
 
-
-    
-  }, [])
-
-
-  const handleClick = () => {
-    let cart = localStorage.getItem('cart')
-    if (!cart) {
-      cart = []
-    }
-    else {
-      cart = JSON.parse(cart)
-                
-    }
-    if (cart.includes(id)) {
-      alert('Item already in cart')
-      return
-    }
-    cart.push(id)
-  
-    localStorage.setItem('cart', JSON.stringify(cart))
+  function cartExists(arr, property, value) {
+    return arr.some((obj) => obj[property] === value);
   }
 
- 
+  const handleClick = () => {
+    let cart = localStorage.getItem("cart");
+    if (!cart) {
+      cart = [];
+    } else {
+      cart = JSON.parse(cart);
+    }
+    if (cartExists(cart, "id", id)) {
+      alert("Item already in cart");
+      return;
+    }
+    cart.push({ id: id, count: 1 });
 
-  
-
-
-  
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert("Item added in cart");
+  };
 
   return (
     <div>
@@ -99,7 +86,7 @@ const productDetails = ({ params }) => {
                       class="rounded-md p-1 text-sm font-medium text-gray-600 focus:text-gray-900 focus:shadow hover:text-gray-800"
                     >
                       {" "}
-                     {brand}{" "}
+                      {brand}{" "}
                     </a>
                   </div>
                 </div>

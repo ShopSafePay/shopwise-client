@@ -1,44 +1,35 @@
-'use client'
+"use client";
 import { useRouter } from "next/navigation";
 
-
 const login = () => {
+  const router = useRouter();
 
-  const router = useRouter()
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  const handleSubmit = async(e) =>{
+    const email = e.target.email.value;
+    const password = e.target.password.value;
 
-    e.preventDefault()
+    console.log(email, password);
 
-    
-
-    const email = e.target.email.value
-    const password = e.target.password.value
-
-    console.log(email,password)
-    
-    const res = await fetch('/api/login', {
-      method: 'POST',
+    const res = await fetch("/api/login", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email, password })
-    })
+      body: JSON.stringify({ email, password }),
+    });
 
-    const data = await res.json()
-    console.log(data)
+    const data = await res.json();
+    console.log(data);
 
-    if(res.status === 201){
-      console.log('User logged in successfully')
-      localStorage.setItem('token', data)
-      router.push('/products')
+    if (res.status === 201) {
+      console.log("User logged in successfully");
+      localStorage.setItem("ecomToken", data);
+      router.push("/products");
     }
-    e.target.reset()
-
-
-    
-
-  }
+    e.target.reset();
+  };
 
   return (
     <div>
@@ -89,11 +80,8 @@ const login = () => {
                     Log In
                   </h3>
                   <form onSubmit={handleSubmit}>
-                    
                     <div className="mb-1 sm:mb-2">
-                      <label
-                        className="mb-1 inline-block font-medium text-emerald-900"
-                      >
+                      <label className="mb-1 inline-block font-medium text-emerald-900">
                         E-mail
                       </label>
                       <input
@@ -106,9 +94,7 @@ const login = () => {
                     </div>
 
                     <div className="mb-1 sm:mb-2">
-                      <label
-                        className="mb-1 inline-block font-medium text-emerald-900"
-                      >
+                      <label className="mb-1 inline-block font-medium text-emerald-900">
                         Password
                       </label>
                       <input

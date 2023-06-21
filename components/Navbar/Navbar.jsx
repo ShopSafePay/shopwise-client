@@ -1,37 +1,32 @@
-'use client'
+"use client";
 import { useRouter } from "next/navigation";
-import { useEffect,useState } from "react";
-import jwt from 'jsonwebtoken'
+import { useEffect, useState } from "react";
+import jwt from "jsonwebtoken";
 
 function Navbar() {
+  const router = useRouter();
 
-  const router = useRouter()
+  const [isLogged, setIsLogged] = useState();
 
-  const [isLogged, setIsLogged] = useState()
+  const handleLogin = async (e) => {
+    e.preventDefault();
 
-  const handleLogin = async(e) =>{
+    router.push("/login");
+  };
 
-    e.preventDefault()
-
-    router.push('/login')
-
-  }
-
-  const handleLogout = async(e) =>{
-
-    e.preventDefault()
-    localStorage.removeItem('token')
-    localStorage.removeItem('cart')
-    router.push('/')
-
-  }
+  const handleLogout = async (e) => {
+    e.preventDefault();
+    localStorage.removeItem("ecomToken");
+    localStorage.removeItem("cart");
+    router.push("/");
+  };
 
   useEffect(() => {
-    const token = localStorage.getItem('token')
-    const decoded = jwt.decode(token)
-    console.log(decoded?.isLogged)
-    setIsLogged(decoded?.isLogged)
-  }, [])
+    const token = localStorage.getItem("ecomToken");
+    const decoded = jwt.decode(token);
+    console.log(decoded?.isLogged);
+    setIsLogged(decoded?.isLogged);
+  }, []);
 
   return (
     <div className="w-full bg-white sticky top-0 z-30 drop-shadow-md">
@@ -84,19 +79,25 @@ function Navbar() {
             <li className="md:mr-12">
               <a href="/cart">Cart</a>
             </li>
-            {
-              isLogged ? (
-                <li className="md:mr-12">
-                  <button className="rounded-full border-2 border-green-500 px-6 py-1 text-green-600 transition-colors hover:bg-green-500 hover:text-white" onClick={handleLogout}>
-                    Logout
-                  </button>
-                </li>) : (
-                <li className="md:mr-12">
-                  <button className="rounded-full border-2 border-green-500 px-6 py-1 text-green-600 transition-colors hover:bg-green-500 hover:text-white" onClick={handleLogin}>
-                    Login
-                  </button>
-                </li>)
-            }
+            {isLogged ? (
+              <li className="md:mr-12">
+                <button
+                  className="rounded-full border-2 border-green-500 px-6 py-1 text-green-600 transition-colors hover:bg-green-500 hover:text-white"
+                  onClick={handleLogout}
+                >
+                  Logout
+                </button>
+              </li>
+            ) : (
+              <li className="md:mr-12">
+                <button
+                  className="rounded-full border-2 border-green-500 px-6 py-1 text-green-600 transition-colors hover:bg-green-500 hover:text-white"
+                  onClick={handleLogin}
+                >
+                  Login
+                </button>
+              </li>
+            )}
           </ul>
         </nav>
       </header>

@@ -1,22 +1,19 @@
-'use client'
+"use client";
 
 import Footer from "@components/Footer/Footer";
 import Navbar from "@components/Navbar/Navbar";
-import React, { useState,useEffect } from "react";
-import items from  '@utils/productItems'
-import axios from 'axios'
-import jwt from 'jsonwebtoken'
+import React, { useState, useEffect } from "react";
+import items from "@utils/productItems";
+import jwt from "jsonwebtoken";
 
 const checkout = () => {
-
   const [data, setData] = useState([]);
   const [Total, setTotal] = useState(0);
-  const [buyerId, setBuyerId] = useState('');
-  const [buyerName, setBuyerName] = useState('');
+  const [buyerId, setBuyerId] = useState("");
+  const [buyerName, setBuyerName] = useState("");
 
   useEffect(() => {
-
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("ecomToken");
 
     if (token === null) {
       window.location.href = "/login";
@@ -24,29 +21,28 @@ const checkout = () => {
       const decode = jwt.decode(token);
       setBuyerId(decode.id);
       setBuyerName(decode.name);
-      console.log(decode.id, decode.name)
+      console.log(decode.id, decode.name);
     }
 
-    const checkout = localStorage.getItem("checkout");
-    if(checkout === null) {
+    const checkout = localStorage.getItem("cart");
+    if (checkout === null) {
       localStorage.setItem("checkout", JSON.stringify([]));
     }
-    const dat = JSON.parse(checkout)
+    const dat = JSON.parse(checkout);
     setData(dat);
-    
+
     // console.log(dat);
   }, []);
 
   useEffect(() => {
     let total = 0;
     data?.map((item) => {
-      total += items[item.id-1].price * item.count;
+      total += items[item.id - 1].price * item.count;
     });
     setTotal(total);
   }, [data]);
 
-
-  const handlePlaceOrder = async(e) => {
+  const handlePlaceOrder = async (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const cardHolder = e.target.cardHolder.value;
@@ -56,15 +52,30 @@ const checkout = () => {
     const billingState = e.target.billingState.value;
     const billingZip = e.target.billingZip.value;
 
-    console.log(email, cardHolder, account , key , billingAddress, billingState, billingZip,Total)
+    console.log(
+      email,
+      cardHolder,
+      account,
+      key,
+      billingAddress,
+      billingState,
+      billingZip,
+      Total
+    );
 
-    if(email && cardHolder && account && key && billingAddress && billingState && billingZip) {
-
-      const res = await fetch('/api/checkout', {
-
-        method: 'POST',
+    if (
+      email &&
+      cardHolder &&
+      account &&
+      key &&
+      billingAddress &&
+      billingState &&
+      billingZip
+    ) {
+      const res = await fetch("/api/checkout", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
 
         body: JSON.stringify({
@@ -74,19 +85,18 @@ const checkout = () => {
           data,
           buyerId,
           buyerName,
-        })
-      })
+        }),
+      });
 
-      res.status === 201 ? alert('Order Placed Successfully') : alert('Order Failed')
+      res.status === 201
+        ? alert("Order Placed Successfully")
+        : alert("Order Failed");
 
       e.target.reset();
-      localStorage.removeItem('checkout');
-      localStorage.removeItem('cart');
-      window.location.href = '/checkout';
-      
+      localStorage.removeItem("cart");
+      window.location.href = "/checkout";
     }
-    
-  }
+  };
 
   return (
     <div>
@@ -143,10 +153,9 @@ const checkout = () => {
                 </a>
                 <span class="font-semibold text-gray-900">Shipping</span>
               </li>
-              
             </ul>
           </div>
-        </div> 
+        </div>
       </div>
       <div class="grid sm:px-10 lg:grid-cols-2 lg:px-20 xl:px-32">
         <div class="px-4 pt-8">
@@ -155,31 +164,22 @@ const checkout = () => {
             Check your items. And select a suitable shipping method.
           </p>
           <div class="mt-8 space-y-3 rounded-lg border bg-white px-2 py-4 sm:px-6">
-
-
-            {
-              data?.map((item) => (
-
-                <div class="flex flex-col rounded-lg bg-white sm:flex-row">
-                  <img
-                    class="m-2 h-24 w-28 rounded-md border object-cover object-center"
-                    src={items[item.id-1].image}
-                    alt=""
-                  />
-                  <div class="flex w-full flex-col px-4 py-4">
-                    <span class="font-semibold">
-                      {items[item.id-1].name}
-                    </span>
-                    <span class="float-right text-gray-400">x{item.count}</span>
-                    <p class="mt-auto text-lg font-bold">${items[item.id-1].price}</p>
-                  </div>
+            {data?.map((item) => (
+              <div class="flex flex-col rounded-lg bg-white sm:flex-row">
+                <img
+                  class="m-2 h-24 w-28 rounded-md border object-cover object-center"
+                  src={items[item.id - 1].image}
+                  alt=""
+                />
+                <div class="flex w-full flex-col px-4 py-4">
+                  <span class="font-semibold">{items[item.id - 1].name}</span>
+                  <span class="float-right text-gray-400">x{item.count}</span>
+                  <p class="mt-auto text-lg font-bold">
+                    ${items[item.id - 1].price}
+                  </p>
                 </div>
-
-              ))
-
-            }
-            
-            
+              </div>
+            ))}
           </div>
 
           <p class="mt-8 text-lg font-medium">Shipping Methods</p>
@@ -203,7 +203,9 @@ const checkout = () => {
                   alt=""
                 />
                 <div class="ml-5">
-                  <span class="mt-2 font-semibold">Shopwise Express Delivery</span>
+                  <span class="mt-2 font-semibold">
+                    Shopwise Express Delivery
+                  </span>
                   <p class="text-slate-500 text-sm leading-6">
                     Expected Delivery: 2-4 Days
                   </p>
@@ -212,7 +214,10 @@ const checkout = () => {
             </div>
           </form>
         </div>
-        <form class="mt-10 bg-gray-50 px-4 pt-8 lg:mt-0" onSubmit={handlePlaceOrder}>
+        <form
+          class="mt-10 bg-gray-50 px-4 pt-8 lg:mt-0"
+          onSubmit={handlePlaceOrder}
+        >
           <p class="text-xl font-bold">Payment Details</p>
           <p class="text-gray-700">
             Complete your order by providing your payment details.
@@ -341,7 +346,7 @@ const checkout = () => {
               >
                 <option value="State">State</option>
                 <option value="State">Sylhet</option>
-                <option value="State" >Dhaka</option>
+                <option value="State">Dhaka</option>
                 <option value="State">Rajshahi</option>
               </select>
               <input
@@ -364,7 +369,7 @@ const checkout = () => {
             </div>
             <div class="mt-6 flex items-center justify-between">
               <p class="text-sm font-medium text-gray-900">Total</p>
-              <p class="text-2xl font-semibold text-gray-900">${Total+8}</p>
+              <p class="text-2xl font-semibold text-gray-900">${Total + 8}</p>
             </div>
           </div>
           {/* <button class="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white">
@@ -373,8 +378,7 @@ const checkout = () => {
           <button
             type="submit"
             class="mt-8 group inline-flex w-full items-center justify-center rounded-md bg-gray-900 px-6 py-4 text-lg font-semibold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-gray-800"
-           
-          > 
+          >
             Place Order
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -396,7 +400,6 @@ const checkout = () => {
       <div className="mt-12">
         <Footer />
       </div>
-      
     </div>
   );
 };
