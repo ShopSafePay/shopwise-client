@@ -2,6 +2,7 @@
 
 import Footer from "@components/Footer/Footer";
 import Navbar from "@components/Navbar/Navbar";
+import jwt from "jsonwebtoken";
 
 import Box from "@mui/material/Box";
 import {
@@ -60,6 +61,20 @@ const columns = [
             }),
           });
           console.log("approve");
+
+          if (res.status === 201) {
+            const rs = await fetch("/api/orders", {
+              method: "PUT",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                id: params.row.objectId,
+              }),
+            });
+            console.log("updated");
+            window.location.reload("/orders");
+          }
         }}
       >
         Approve
@@ -88,6 +103,20 @@ const columns = [
             }),
           });
           console.log("reject");
+
+          if (res.status === 201) {
+            const rs = await fetch("/api/orders", {
+              method: "PUT",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                id: params.row.objectId,
+              }),
+            });
+            console.log("updated");
+            window.location.reload("/orders");
+          }
         }}
       >
         Reject
@@ -157,17 +186,26 @@ const Order = () => {
   const dataFetch = async () => {
     const res = await fetch("/api/orders");
     let data = await res.json();
+    const token = localStorage.getItem("ecomToken");
+    if (!token) {
+      window.location.href = "/login";
+    }
+
+    const decode = jwt.decode(token);
 
     data = data?.map((item, x) => {
-      return {
-        id: x + 1,
-        transaction_id: item.transactionId,
-        name: item.buyerName,
-        amount: item.count * items[item.productId - 1].price,
-        productId: item.productId,
-        account: items[item.productId - 1].account,
-        buyerAccount: item.buyerAccount,
-      };
+      if (items[item.productId - 1].bankId === decode.id) {
+        return {
+          id: x + 1,
+          transaction_id: item.transactionId,
+          name: item.buyerName,
+          amount: item.count * items[item.productId - 1].price,
+          productId: item.productId,
+          account: items[item.productId - 1].account,
+          buyerAccount: item.buyerAccount,
+          objectId: item._id,
+        };
+      }
     });
 
     console.log(data);

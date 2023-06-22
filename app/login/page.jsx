@@ -1,6 +1,8 @@
 "use client";
 import { useRouter } from "next/navigation";
-
+import jwt from "jsonwebtoken";
+import Navbar from "@components/Navbar/Navbar";
+import Footer from "@components/Footer/Footer";
 const login = () => {
   const router = useRouter();
 
@@ -26,13 +28,19 @@ const login = () => {
     if (res.status === 201) {
       console.log("User logged in successfully");
       localStorage.setItem("ecomToken", data);
-      router.push("/products");
+      const token = jwt.decode(data);
+      if (token.role === "supplier") {
+        router.push("/orders");
+      } else if (token.role === "user") {
+        router.push("/products");
+      }
     }
     e.target.reset();
   };
 
   return (
     <div>
+      <Navbar />
       <div className="relative">
         <img
           src="https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
@@ -131,6 +139,7 @@ const login = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

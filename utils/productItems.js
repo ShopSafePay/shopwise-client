@@ -12,6 +12,8 @@ const items = [
     img4: "/assets/products/iphone/iphone5.webp",
     url: "/products/1",
     account: 9963161088,
+    bankId: "648f942a45ca153a0334a232",
+    category: "Phone",
   },
   {
     id: 2,
@@ -26,6 +28,8 @@ const items = [
     img4: "/assets/products/beats/b1.webp",
     url: "/products/2",
     account: 5434753524,
+    bankId: "6492c2b3fe0dd1f5e9aca9b9",
+    category: "Headphones",
   },
   {
     id: 3,
@@ -40,6 +44,8 @@ const items = [
     img4: "/assets/products/vivobook/vivo5.webp",
     url: "/products/3",
     account: 9963161088,
+    bankId: "648f942a45ca153a0334a232",
+    category: "Laptop",
   },
   {
     id: 4,
@@ -54,6 +60,8 @@ const items = [
     img4: "/assets/products/oneplus/oneplus2.webp",
     url: "/products/4",
     account: 2890218458,
+    bankId: "6492c319fe0dd1f5e9aca9be",
+    category: "Phone",
   },
   {
     id: 5,
@@ -68,6 +76,8 @@ const items = [
     img4: "/assets/products/beats-buds/b1.webp",
     url: "/products/5",
     account: 5434753524,
+    bankId: "6492c2b3fe0dd1f5e9aca9b9",
+    category: "Headphones",
   },
   {
     id: 6,
@@ -82,6 +92,8 @@ const items = [
     img4: "/assets/products/macbook/mac1.webp",
     url: "/products/6",
     account: 9963161088,
+    bankId: "648f942a45ca153a0334a232",
+    category: "Laptop",
   },
   {
     id: 7,
@@ -96,6 +108,8 @@ const items = [
     img4: "/assets/products/pixel/pixel5.jpeg",
     url: "/products/7",
     account: 5448451675,
+    bankId: "6492c231fe0dd1f5e9aca9b4",
+    category: "Phone",
   },
   {
     id: 8,
@@ -110,6 +124,8 @@ const items = [
     img4: "/assets/products/razer/r5.webp",
     url: "/products/8",
     account: 8593460290,
+    bankId: "6492bdadfb7efdebf2c5d802",
+    category: "Headphones",
   },
   {
     id: 9,
@@ -124,6 +140,8 @@ const items = [
     img4: "/assets/products/tuf/tuf5.jpeg",
     url: "/products/9",
     account: 7020683959,
+    bankId: "648f948845ca153a0334a237",
+    category: "Laptop",
   },
 ];
 

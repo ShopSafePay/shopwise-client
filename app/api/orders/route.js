@@ -36,3 +36,22 @@ export const POST = async (req) => {
     return new NextResponse(JSON.stringify(rs.data), { status: 201 });
   }
 };
+
+export const PUT = async (req) => {
+  const { id } = await req.json();
+
+  try {
+    await db();
+    const data = await ProductSell.findOneAndUpdate(
+      { _id: id },
+      { status: "1" }
+    );
+
+    console.log(data);
+
+    return new NextResponse(JSON.stringify(data), { status: 201 });
+  } catch (err) {
+    console.log(err);
+    return new NextResponse("Database error", { status: 500 });
+  }
+};

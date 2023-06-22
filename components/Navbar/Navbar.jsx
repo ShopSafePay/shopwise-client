@@ -3,10 +3,37 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import jwt from "jsonwebtoken";
 
+const list = [
+  {
+    id: 1,
+    name: "Products",
+    url: "/products",
+  },
+  {
+    id: 2,
+    name: "Categories",
+    url: "/categories",
+  },
+  {
+    id: 3,
+    name: "Search",
+    url: "/search",
+  },
+  {
+    id: 4,
+    name: "Cart",
+    url: "/cart",
+  },
+];
+
 function Navbar() {
   const router = useRouter();
 
-  const [isLogged, setIsLogged] = useState();
+  const [data, setData] = useState({
+    name: "Login",
+    functionName: "handleLogin ",
+  });
+  const [role, setRole] = useState();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -23,9 +50,17 @@ function Navbar() {
 
   useEffect(() => {
     const token = localStorage.getItem("ecomToken");
-    const decoded = jwt.decode(token);
-    console.log(decoded?.isLogged);
-    setIsLogged(decoded?.isLogged);
+    if (token) {
+      setData({ ...data, name: "Logout", functionName: handleLogout });
+    } else {
+      setData({ ...data, name: "Login", functionName: handleLogin });
+    }
+    const decode = jwt.decode(token);
+    if (decode?.role === "supplier") {
+      setRole(true);
+    } else {
+      setRole(false);
+    }
   }, []);
 
   return (
@@ -67,37 +102,21 @@ function Navbar() {
           className="flex max-h-0 w-full flex-col items-center justify-between overflow-hidden transition-all peer-checked:mt-8 peer-checked:max-h-56 md:ml-24 md:max-h-full md:flex-row md:items-start"
         >
           <ul className="flex flex-col items-center space-y-2 md:ml-auto md:flex-row md:space-y-0">
+            {!role &&
+              list.map((item) => (
+                <li className="md:mr-12">
+                  <a href={item.url}>{item.name}</a>
+                </li>
+              ))}
+
             <li className="md:mr-12">
-              <a href="/products">Products</a>
+              <button
+                className="rounded-full border-2 border-green-500 px-6 py-1 text-green-600 transition-colors hover:bg-green-500 hover:text-white"
+                onClick={data.functionName}
+              >
+                {data.name}
+              </button>
             </li>
-            <li className="md:mr-12">
-              <a href="/categories">Categories</a>
-            </li>
-            <li className="md:mr-12">
-              <a href="/search">Search</a>
-            </li>
-            <li className="md:mr-12">
-              <a href="/cart">Cart</a>
-            </li>
-            {isLogged ? (
-              <li className="md:mr-12">
-                <button
-                  className="rounded-full border-2 border-green-500 px-6 py-1 text-green-600 transition-colors hover:bg-green-500 hover:text-white"
-                  onClick={handleLogout}
-                >
-                  Logout
-                </button>
-              </li>
-            ) : (
-              <li className="md:mr-12">
-                <button
-                  className="rounded-full border-2 border-green-500 px-6 py-1 text-green-600 transition-colors hover:bg-green-500 hover:text-white"
-                  onClick={handleLogin}
-                >
-                  Login
-                </button>
-              </li>
-            )}
           </ul>
         </nav>
       </header>

@@ -24,6 +24,7 @@ export const POST = async (req) => {
       email: user.email,
       name: user.name,
       isLogged: true,
+      role: user.role,
     };
 
     const token = jwt.sign(data, process.env.JWT_SECRET, {
