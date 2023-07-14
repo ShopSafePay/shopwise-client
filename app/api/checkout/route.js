@@ -13,21 +13,19 @@ export const POST = async (req) => {
     const recieverAccount = "7798540337";
 
     console.log(key);
-
+    const tranId = generateSecretKey(6);
+    console.log(tranId);
     const rs = await axios.post(`http://localhost:3001/api/payment`, {
       account,
       key,
       Total,
       recieverAccount,
+      tranId,
     });
 
     console.log(rs);
 
     if (rs.status === 201) {
-      const tranId = generateSecretKey(6);
-
-      console.log(tranId);
-
       data.forEach(async (item) => {
         const newProductSell = new ProductSell({
           productId: item.id,

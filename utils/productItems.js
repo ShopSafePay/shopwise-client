@@ -14,6 +14,7 @@ const items = [
     account: 9963161088,
     bankId: "648f942a45ca153a0334a232",
     category: "Phone",
+    ecomId: "64937d4ecef5bff36b1d45fd",
   },
   {
     id: 2,
@@ -30,11 +31,12 @@ const items = [
     account: 5434753524,
     bankId: "6492c2b3fe0dd1f5e9aca9b9",
     category: "Headphones",
+    ecomId: "6499d4f9a5e8a5938677ceed",
   },
   {
     id: 3,
     name: 'ASUS Vivobook 17.3" Full HD PC Laptop',
-    brand: "Apple",
+    brand: "Asus",
     price: 399,
     rating: 4.7,
     image: "/assets/products/vivobook/vivo1.webp",
@@ -43,9 +45,10 @@ const items = [
     img3: "/assets/products/vivobook/vivo4.webp",
     img4: "/assets/products/vivobook/vivo5.webp",
     url: "/products/3",
-    account: 9963161088,
-    bankId: "648f942a45ca153a0334a232",
+    account: 7020683959,
+    bankId: "648f948845ca153a0334a237",
     category: "Laptop",
+    ecomId: "64993de60aac6ca6eac073e4",
   },
   {
     id: 4,
@@ -62,6 +65,7 @@ const items = [
     account: 2890218458,
     bankId: "6492c319fe0dd1f5e9aca9be",
     category: "Phone",
+    ecomId: "6499d6efa5e8a5938677cef6",
   },
   {
     id: 5,
@@ -78,6 +82,7 @@ const items = [
     account: 5434753524,
     bankId: "6492c2b3fe0dd1f5e9aca9b9",
     category: "Headphones",
+    ecomId: "6499d4f9a5e8a5938677ceed",
   },
   {
     id: 6,
@@ -94,6 +99,7 @@ const items = [
     account: 9963161088,
     bankId: "648f942a45ca153a0334a232",
     category: "Laptop",
+    ecomId: "64937d4ecef5bff36b1d45fd",
   },
   {
     id: 7,
@@ -110,6 +116,7 @@ const items = [
     account: 5448451675,
     bankId: "6492c231fe0dd1f5e9aca9b4",
     category: "Phone",
+    ecomId: "6499d615a5e8a5938677cef0",
   },
   {
     id: 8,
@@ -126,6 +133,7 @@ const items = [
     account: 8593460290,
     bankId: "6492bdadfb7efdebf2c5d802",
     category: "Headphones",
+    ecomId: "6499d64aa5e8a5938677cef3",
   },
   {
     id: 9,
@@ -142,6 +150,7 @@ const items = [
     account: 7020683959,
     bankId: "648f948845ca153a0334a237",
     category: "Laptop",
+    ecomId: "64993de60aac6ca6eac073e4",
   },
 ];
 

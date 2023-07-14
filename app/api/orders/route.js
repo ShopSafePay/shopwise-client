@@ -18,7 +18,7 @@ export const GET = async (req) => {
 };
 
 export const POST = async (req) => {
-  const { recieverAccount, Total } = await req.json();
+  const { recieverAccount, Total, tranId } = await req.json();
 
   const account = "7798540337";
   const key = "x3oPm5NDDAIWojVn";
@@ -28,6 +28,7 @@ export const POST = async (req) => {
     key,
     Total,
     recieverAccount,
+    tranId
   });
 
   console.log(rs);

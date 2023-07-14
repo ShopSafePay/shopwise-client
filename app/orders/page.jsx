@@ -58,6 +58,7 @@ const columns = [
             body: JSON.stringify({
               recieverAccount: params.row.account,
               Total: params.row.amount,
+              tranId: params.row.transaction_id,
             }),
           });
           console.log("approve");
@@ -100,6 +101,7 @@ const columns = [
             body: JSON.stringify({
               recieverAccount: params.row.buyerAccount,
               Total: params.row.amount,
+              tranId: params.row.transaction_id,
             }),
           });
           console.log("reject");
@@ -192,11 +194,22 @@ const Order = () => {
     }
 
     const decode = jwt.decode(token);
-
+    let dat = [];
     data = data?.map((item, x) => {
-      if (items[item.productId - 1].bankId === decode.id) {
-        return {
-          id: x + 1,
+      console.log(items[item.productId - 1].ecomId, decode.id);
+      if (items[item.productId - 1].ecomId === decode.id) {
+        // return {
+        //   id: x + 1,
+        //   transaction_id: item.transactionId,
+        //   name: item.buyerName,
+        //   amount: item.count * items[item.productId - 1].price,
+        //   productId: item.productId,
+        //   account: items[item.productId - 1].account,
+        //   buyerAccount: item.buyerAccount,
+        //   objectId: item._id,
+        // };
+        dat.push({
+          id: x + 1,  
           transaction_id: item.transactionId,
           name: item.buyerName,
           amount: item.count * items[item.productId - 1].price,
@@ -204,12 +217,15 @@ const Order = () => {
           account: items[item.productId - 1].account,
           buyerAccount: item.buyerAccount,
           objectId: item._id,
-        };
+        });
       }
+      
     });
 
-    console.log(data);
-    setRow(data);
+    if(dat){
+      console.log(dat);
+      setRow(dat);
+    }
   };
 
   useEffect(() => {

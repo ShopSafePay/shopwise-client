@@ -39,13 +39,15 @@ function Navbar() {
     e.preventDefault();
 
     router.push("/login");
+    
   };
 
   const handleLogout = async (e) => {
     e.preventDefault();
     localStorage.removeItem("ecomToken");
     localStorage.removeItem("cart");
-    router.push("/");
+    // router.push("/");
+    window.location.href = "/login";
   };
 
   useEffect(() => {
