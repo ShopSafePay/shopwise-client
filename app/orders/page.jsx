@@ -26,7 +26,14 @@ const columns = [
   },
   {
     field: "name",
-    headerName: "Requester",
+    headerName: "Product Name",
+    width: 260,
+    headerAlign: "center",
+    align: "center",
+  },
+  {
+    field: "count",
+    headerName: "Count",
     width: 260,
     headerAlign: "center",
     align: "center",
@@ -196,6 +203,7 @@ const Order = () => {
     const decode = jwt.decode(token);
     let dat = [];
     data = data?.map((item, x) => {
+      console.log("mahin");
       console.log(items[item.productId - 1].ecomId, decode.id);
       if (items[item.productId - 1].ecomId === decode.id) {
         // return {
@@ -211,7 +219,8 @@ const Order = () => {
         dat.push({
           id: x + 1,  
           transaction_id: item.transactionId,
-          name: item.buyerName,
+          name: items[item.productId - 1].name,
+          count: item.count,
           amount: item.count * items[item.productId - 1].price,
           productId: item.productId,
           account: items[item.productId - 1].account,
